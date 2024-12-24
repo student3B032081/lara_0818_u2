@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('home', function (){
     return view('home.index');
 });
+Route::get('hello/{name?}', [HelloController::class, 'index'])->name('hello.index');
